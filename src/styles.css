@@ -4,7 +4,6 @@ body, * {
 }
 
 .logo {
-    font-family: 'Kaushan Script', cursive;
     font-size: 3em;
     font-weight: bold;
     margin: 0;
@@ -20,5 +19,9 @@ body, * {
   
 ::-webkit-scrollbar-track {
   background-color: #f1f1f1;
+}
+
+.kaushan {
+    font-family: 'Kaushan Script', cursive;
 }
   
