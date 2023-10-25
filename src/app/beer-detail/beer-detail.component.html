@@ -1,15 +1,73 @@
 <app-navbar></app-navbar>
+<!-- <div class="beer-detail container" data-aos="flip-left" style="margin-top: 20vh;"> -->
 <div class="beer-detail container" style="margin-top: 20vh;">
   <div style="display: flex;">
-    <div class="imgContainer" style="border: 3px solid #d2d1d1;background-color: white; border-radius: 10px; padding: 25px; min-width: 300px; max-width: 300px; display: flex; justify-content: center; align-items: center;">
+    <div class="imgContainer"
+      style="border: 3px solid #d2d1d1;background-color: white; border-radius: 10px; padding: 25px; min-width: 300px; max-width: 300px; display: flex; justify-content: center; align-items: center;">
       <img [src]="beer.image_url" alt="Image de la bière" height="300">
     </div>
     <div class="infos" style="margin-left: 15px; display: flex; flex-wrap: wrap; flex-direction: column;">
       <h1 class="kaushan">{{ beer.name }}</h1>
-      <p class="kaushan" style="font-size: 1.3em;">{{ beer.tagline }}</p> 
+      <p class="kaushan" style="font-size: 1.3em;">{{ beer.tagline }}</p>
       <p>ALC. {{ beer.abv }}% VOL.</p>
       <br><br>
-      <p style="background-color: white; border: 1px solid #d2d1d1; border-radius: 10px; padding: 15px;">{{ beer.description }}</p>
+      <p style="background-color: white; border: 1px solid #d2d1d1; border-radius: 10px; padding: 15px;">
+        {{ beer.description }}</p>
     </div>
   </div>
+  <div class="infos" style="margin-top: 25px;">
+    <h3 class="kaushan">Beer characteristics:</h3>
+    <div>
+      <p>First brewed: {{ beer.first_brewed }}</p>
+      <p>Brewed tips: {{ beer.brewers_tips }}</p>
+      <p>ABV (Alcohol by Volume): {{ beer.abv }}</p>
+      <p>IBU (International Bitterness Units): {{ beer.ibu }}</p>
+    </div>
+  </div>
+  <h3 class="kaushan" style="margin-top: 50px; ">Ingredients:</h3>
+  <div class="ingredients" style="display: flex; justify-content: space-between;">
+    <div>
+      <h4 class="kaushan">Malts:</h4>
+      <ul>
+        <li *ngFor="let malt of beer.ingredients.malt">
+          {{ malt.name }} - {{ malt.amount.value }} {{ malt.amount.unit }}
+        </li>
+      </ul>
+    </div>
+    <div>
+      <h4 class="kaushan">Hops:</h4>
+      <ul>
+        <li *ngFor="let hop of beer.ingredients.hops">
+          {{ hop.name }} - {{ hop.amount.value }} {{ hop.amount.unit }} (add: {{ hop.add }}, attribute:
+          {{ hop.attribute }})
+        </li>
+      </ul>
+    </div>
+    <div>
+      <h4 class="kaushan">Yeast:</h4>
+      <p>{{ beer.ingredients.yeast }}</p>
+    </div>
+  </div>
+
+  <h3 class="kaushan" style="margin-top: 25px;">Brewing Method:</h3>
+  <div class="method" style="display: flex; justify-content: space-between;">
+    <div>
+      <h4 class="kaushan">Mash Temp:</h4>
+      <ul>
+        <li *ngFor="let mashTemp of beer.method.mash_temp">
+          Temp: {{ mashTemp.temp.value }}&deg;{{ mashTemp.temp.unit }} (Duration: {{ mashTemp.duration }} minutes)
+        </li>
+      </ul>
+    </div>
+    <div>
+      <h4 class="kaushan">Fermentation:</h4>
+      <p>Temp: {{ beer.method.fermentation.temp.value }}&deg;{{ beer.method.fermentation.temp.unit }}</p>
+    </div>
+    <div>
+      <h4 class="kaushan">Twist:</h4>
+      <p>{{ beer.method.twist || 'N/A' }}</p>
+    </div>
+  </div>
+  
+
 </div>

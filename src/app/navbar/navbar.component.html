@@ -1,16 +1,10 @@
-<div style="position: absolute; top: 0; left: 0; right: 0; height: 75px; background-color: transparent;">
-  <div style="display: flex; align-items: center; justify-content: space-between; padding: 15px 50px;">
+<div [ngClass]="{'white-bg': isScrolled}" style="display: flex; position: fixed; top: 0; left: 0; right: 0; height: 75px; z-index: 999;">
+  <div style="display: flex; align-items: center; justify-content: space-between; padding: 15px 50px; width: 100%;">
     <a [routerLink]="['/home']" class="link">
       <h1 class="logo kaushan">La Brasserie</h1>
     </a>
-    
 
-    <!-- <form class="example-form">
-      <mat-form-field class="example-full-width" style="max-height: 50px;">
-        <mat-label>Search something</mat-label>
-        <input matInput placeholder="" value="">
-      </mat-form-field>
-    </form> -->
+    <!-- Votre faux champ de recherche -->
     <div class="fakeSearchBar" style="width: 300px; border: 1px solid #d2d1d1; height: 30px; border-radius: 15px; background-color: white; display: flex; align-items: center; padding-left: 15px;">Rechercher un article..</div>
 
     <img src="../../assets/img/panier.png" alt="panier" height="30" class="cartIcon">

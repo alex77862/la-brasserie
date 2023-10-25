@@ -16,25 +16,23 @@ import {
   styleUrls: ['./beer-detail.component.css']
 })
 export class BeerDetailComponent implements OnInit {
-  beer: any; // Propriété pour stocker les informations de la bière
+  beer: any;
 
   constructor(private route: ActivatedRoute, private router: Router, private httpService: HttpService) {}
 
   ngOnInit() {
+    window.scrollTo(0, 0)
     this.route.params.subscribe(params => {
       const beerId = +params['id'];
       if (isNaN(beerId)) {
         console.error('Invalid Beer ID');
-        // Redirige vers /home si beerId est NaN
         this.router.navigate(['/home']);
       } else {
         console.log('Beer ID:', beerId);
-        // Utilisez le service HttpService pour récupérer les détails de la bière par son ID
         this.httpService.getBeerById(beerId).then(response => {
           this.beer = response.data[0];
-        }).catch((error: any) => { // Spécifiez explicitement le type 'any' pour 'error'
+        }).catch((error: any) => {
           console.error('Error fetching beer details:', error);
-          // Redirige vers /home en cas d'erreur
           this.router.navigate(['/home']);
         });
       }

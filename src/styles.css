@@ -29,3 +29,7 @@ body, * {
 .kaushan {
     font-family: 'Kaushan Script', cursive;
 }
+
+.white-bg {
+  background: white;
+}

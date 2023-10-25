@@ -1,3 +1,18 @@
 p {
     margin: 0;
 }
+
+.infos > div > p {
+    height: 50px;
+    padding: 5px;
+    display: flex;
+    align-items: center;
+}
+
+.infos > div > p:nth-child(odd) {
+    background-color: #F9F9F9; /* Couleur pour les éléments impairs */
+}
+
+.infos > div > p:nth-child(even) {
+    background-color: #E8E8E8; /* Couleur pour les éléments pairs */
+}
