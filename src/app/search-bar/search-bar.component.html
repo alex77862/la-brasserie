@@ -1,10 +1,8 @@
-<!-- search-bar.component.html -->
-<div class="search-bar" (click)="showDropdown = true">
-  <input type="text" [(ngModel)]="searchTerm" placeholder="Rechercher...">
-  <button (click)="onSearch()">Rechercher</button>
+<div class="search-bar" (click)="showDropdown = true" style="display: flex;">
+  <input type="text" [(ngModel)]="searchTerm" placeholder="Search something..." style="border-radius: 15px 0 0 15px; border: 1px solid #d2d1d1; border-right: 0;">
+  <button (click)="onSearch()" style="width: 20px; border-radius: 0 15px 15px 0; border: 1px solid #d2d1d1; border-left: 0; display: flex; justify-content: center; align-items: center;"><img src="../../assets/img/loupe.png" alt="searchIcon" width="15" ></button>
 </div>
 
-<!-- Affiche le dropdown si showDropdown est vrai -->
 <div class="dropdown" *ngIf="showDropdown" #dropdown>
   <div *ngFor="let beer of results; let i = index" (click)="onItemClick(beer)">
     <div [class]="beer.hovered ? 'dropdown-item' : 'dropdown-item'" style="display: flex; align-items: center;">

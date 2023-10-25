@@ -4,14 +4,20 @@ body, * {
 }
 
 .link {
-  text-decoration: none; /* Supprime la décoration (soulignement) */
-  color: black; /* Change la couleur du texte en noir */
+  text-decoration: none;
+  color: black;
 }
 
 .logo {
     font-size: 3em;
     font-weight: bold;
     margin: 0;
+}
+
+@media (max-width: 350px) {
+  .logo {
+    font-size: 2.8em;
+  }
 }
 
 ::-webkit-scrollbar {

@@ -13,10 +13,6 @@ button {
   border-radius: 5px;
 }
 
-/* search-bar.component.css */
-
-/* search-bar.component.css */
-
 .search-bar {
   position: relative;
 }
@@ -32,7 +28,6 @@ button {
   overflow-y: auto;
 }
 
-/* Style par défaut */
 .dropdown-item {
   display: flex;
   align-items: center;
@@ -40,7 +35,6 @@ button {
   border-bottom: 1px solid #d2d1d1;
 }
 
-/* Style au survol */
 .dropdown-item:hover {
   background-color: #d2d1d1;
   cursor: pointer;

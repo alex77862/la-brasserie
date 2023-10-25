@@ -1,5 +1,3 @@
-// search.service.ts
-
 import { Injectable } from '@angular/core';
 import { HttpService } from './http.service';
 
@@ -11,6 +9,6 @@ export class SearchService {
 
   getAllBeers() {
     return this.httpService.fetchDataFromUrl()
-      .then(response => response.data); // Renvoie les données de réponse (tableau de bières)
+      .then(response => response.data);
   }
 }
