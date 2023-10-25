@@ -1,15 +1,13 @@
-<!-- search-bar.component.html -->
-<div class="search-bar">
+<div class="search-bar" (click)="showDropdown = true">
   <input type="text" [(ngModel)]="searchTerm" placeholder="Rechercher...">
   <button (click)="onSearch()">Rechercher</button>
 </div>
 
-<!-- Affiche les résultats -->
-<div *ngIf="results.length > 0">
-  <h3>Résultats de la recherche :</h3>
-  <ul>
-    <li *ngFor="let beer of results">
-      {{ beer.name }}
-    </li>
-  </ul>
+<div class="dropdown" *ngIf="showDropdown" #dropdown>
+  <div *ngFor="let beer of results" style="display: flex; align-items: center; padding: 5px 0; border-bottom: 1px solid #d2d1d1;">
+    <div class="imgContainer" style="width: 50px; display: flex; justify-content: center; align-items: center;">
+      <img [src]="beer.image_url" alt="Image de la bière" height="75px">
+    </div>
+    {{ beer.name }}
+  </div>
 </div>
