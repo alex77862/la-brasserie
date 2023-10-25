@@ -1,5 +1,15 @@
+<!-- search-bar.component.html -->
 <div class="search-bar">
-    <input type="text" [(ngModel)]="searchTerm" placeholder="Rechercher...">
-    <button (click)="onSearch()">Rechercher</button>
-  </div>
-  
+  <input type="text" [(ngModel)]="searchTerm" placeholder="Rechercher...">
+  <button (click)="onSearch()">Rechercher</button>
+</div>
+
+<!-- Affiche les résultats -->
+<div *ngIf="results.length > 0">
+  <h3>Résultats de la recherche :</h3>
+  <ul>
+    <li *ngFor="let beer of results">
+      {{ beer.name }}
+    </li>
+  </ul>
+</div>

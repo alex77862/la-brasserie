@@ -8,18 +8,18 @@ import { Observable } from 'rxjs';
   templateUrl: './search-bar.component.html',
   styleUrls: ['./search-bar.component.css']
 })
+
 export class SearchBarComponent {
   searchTerm: string = '';
-  results: string[] = []; // Type des résultats
+  results: any[] = [];
 
   constructor(private searchService: SearchService) {}
 
   onSearch() {
-    this.searchService.search(this.searchTerm)
-      .subscribe((data: string[]) => { // Spécifie le type de données reçu ici
-        this.results = data; // Affecte les résultats
-        // Ici, tu peux gérer les résultats de la recherche
-        console.log(this.results);
+    this.searchService.getAllBeers()
+      .then(data => {
+        // Filtrer les bières en fonction du terme de recherche
+        this.results = data.filter((beer: any) => beer.name.toLowerCase().includes(this.searchTerm.toLowerCase()));
       });
   }
 }

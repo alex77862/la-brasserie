@@ -1,20 +1,16 @@
 // search.service.ts
-import { Injectable } from '@angular/core';
-import { Observable, of } from 'rxjs';
 
+import { Injectable } from '@angular/core';
+import { HttpService } from './http.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class SearchService {
-  search(term: string): Observable<string[]> { // Spécifie le type de retour comme Observable<string[]>
-    // Logique de recherche (exemple factice)
-    const fakeResults: string[] = [
-      "Résultat 1",
-      "Résultat 2",
-      "Résultat 3"
-    ];
+  constructor(private httpService: HttpService) {}
 
-    return of(fakeResults); // N'oublie pas d'importer 'of' depuis 'rxjs' si tu ne l'as pas encore fait
+  getAllBeers() {
+    return this.httpService.fetchDataFromUrl()
+      .then(response => response.data); // Renvoie les données de réponse (tableau de bières)
   }
 }
