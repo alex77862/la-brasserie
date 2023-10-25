@@ -1,6 +1,6 @@
 <app-navbar></app-navbar>
 <!-- <div class="beer-detail container" data-aos="flip-left" style="margin-top: 20vh;"> -->
-<div class="beer-detail container" style="margin-top: 20vh;">
+<div class="beer-detail container" style="margin-top: 20vh; margin-bottom: 5vh;">
   <div style="display: flex;">
     <div class="imgContainer"
       style="border: 3px solid #d2d1d1;background-color: white; border-radius: 10px; padding: 25px; min-width: 300px; max-width: 300px; display: flex; justify-content: center; align-items: center;">
@@ -19,7 +19,6 @@
     <h3 class="kaushan">Beer characteristics:</h3>
     <div>
       <p>First brewed: {{ beer.first_brewed }}</p>
-      <p>Brewed tips: {{ beer.brewers_tips }}</p>
       <p>ABV (Alcohol by Volume): {{ beer.abv }}</p>
       <p>IBU (International Bitterness Units): {{ beer.ibu }}</p>
     </div>
@@ -68,6 +67,17 @@
       <p>{{ beer.method.twist || 'N/A' }}</p>
     </div>
   </div>
+
+  <h3 class="kaushan" style="margin-top: 25px;">Brewed tips:</h3>
+  <p>{{ beer.brewers_tips }}</p>
+
+  <h3 class="kaushan" style="margin-top: 25px;">Food Pairing:</h3>
+<ul>
+  <li *ngFor="let foodItem of beer.food_pairing">
+    {{ foodItem }}
+  </li>
+</ul>
+
   
 
 </div>

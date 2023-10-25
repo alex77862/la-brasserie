@@ -9,18 +9,37 @@ import * as AOS from 'aos';
 })
 
 export class HomeComponent implements OnInit {
-  allBeers: any[] = []; // Propriété pour stocker toutes les bières
+  allBeers: any[] = [];
+  filteredBeers: any[] = [];
+  selectedFilter: string = "all";
 
   constructor(private httpService: HttpService) { }
 
   ngOnInit() {
     AOS.init();
     this.httpService.fetchDataFromUrl().then(response => {
-      console.log(response.data);
-      // Affectez toutes les bières à la propriété allBeers
       this.allBeers = response.data;
+      this.applyFilter();
     }).catch(error => {
       console.error(error);
     });
   }
+
+  applyFilter() {
+    switch (this.selectedFilter) {
+      case "slightly-bitter":
+        this.filteredBeers = this.allBeers.filter(beer => beer.ibu < 20);
+        break;
+      case "bitter":
+        this.filteredBeers = this.allBeers.filter(beer => beer.ibu >= 20 && beer.ibu <= 40);
+        break;
+      case "very-bitter":
+        this.filteredBeers = this.allBeers.filter(beer => beer.ibu > 40);
+        break;
+      default:
+        this.filteredBeers = this.allBeers;
+        break;
+    }
+  }
+  
 }

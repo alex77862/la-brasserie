@@ -12,3 +12,26 @@
     cursor: pointer;
   }
   
+  .tooltip {
+    opacity: 0;
+    position: absolute;
+    background-color: #333; /* Couleur de fond du tooltip */
+    color: white; /* Couleur du texte */
+    padding: 5px 10px; /* Espacement interne */
+    border-radius: 5px; /* Coins arrondis */
+    transition: opacity 0.3s; /* Effet de transition */
+    top: -40px; /* Positionnement au-dessus de l'icône de panier */
+    left: 50%; /* Centré horizontalement */
+    transform: translateX(-50%); /* Centrage horizontal */
+  }
+  
+  .cart-container {
+    position: relative;
+    cursor: pointer;
+  }
+  
+  .cartIcon:hover + .tooltip {
+    opacity: 1;
+  }
+  
+  

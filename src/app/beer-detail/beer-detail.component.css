@@ -10,9 +10,9 @@ p {
 }
 
 .infos > div > p:nth-child(odd) {
-    background-color: #F9F9F9; /* Couleur pour les éléments impairs */
+    background-color: #E8E8E8; /* Couleur pour les éléments impairs */
 }
 
 .infos > div > p:nth-child(even) {
-    background-color: #E8E8E8; /* Couleur pour les éléments pairs */
+    background-color: #F9F9F9; /* Couleur pour les éléments pairs */
 }
