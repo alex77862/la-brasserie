@@ -14,4 +14,10 @@ export class HttpService {
   fetchDataFromUrl() {
     return axios.get(this.apiUrl);
   }
+
+  getBeerById(beerId: number) {
+  const apiUrl = `${this.apiUrl}/${beerId}`;
+  return axios.get(apiUrl);
+}
+
 }

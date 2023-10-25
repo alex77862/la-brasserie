@@ -3,6 +3,11 @@ body, * {
     margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif;
 }
 
+.link {
+  text-decoration: none; /* Supprime la décoration (soulignement) */
+  color: black; /* Change la couleur du texte en noir */
+}
+
 .logo {
     font-size: 3em;
     font-weight: bold;

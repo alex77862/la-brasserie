@@ -1,6 +1,15 @@
 <app-navbar></app-navbar>
-<div class="beer-detail" style="margin-top: 75px;">
-  <h2>Beer Details</h2>
-  <p>Beer ID: {{ beerId }}</p>
-  <!-- Affichez ici les détails de la bière en fonction de l'ID -->
+<div class="beer-detail container" style="margin-top: 20vh;">
+  <div style="display: flex;">
+    <div class="imgContainer" style="border: 3px solid #d2d1d1;background-color: white; border-radius: 10px; padding: 25px; min-width: 300px; max-width: 300px; display: flex; justify-content: center; align-items: center;">
+      <img [src]="beer.image_url" alt="Image de la bière" height="300">
+    </div>
+    <div class="infos" style="margin-left: 15px; display: flex; flex-wrap: wrap; flex-direction: column;">
+      <h1 class="kaushan">{{ beer.name }}</h1>
+      <p class="kaushan" style="font-size: 1.3em;">{{ beer.tagline }}</p> 
+      <p>ALC. {{ beer.abv }}% VOL.</p>
+      <br><br>
+      <p style="background-color: white; border: 1px solid #d2d1d1; border-radius: 10px; padding: 15px;">{{ beer.description }}</p>
+    </div>
+  </div>
 </div>

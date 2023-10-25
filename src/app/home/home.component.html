@@ -7,7 +7,7 @@
       <div style="display: flex; flex-wrap: wrap; justify-content: space-between;">
         <div *ngFor="let beer of allBeers" data-aos="fade-up"
           style="min-width: 250px; max-width: 250px; margin: 15px; margin-bottom: 50px;">
-          <a [routerLink]="['/beer', beer.id]">
+          <a [routerLink]="['/beer', beer.id]" class="link">
             <div class="imgSection"
               style="background: white; border: 1px solid #d2d1d1; border-radius: 15px; display: flex; justify-content: center; align-items: center; padding: 15px;">
               <img [src]="beer.image_url" alt="Image de la bière" height="250">
