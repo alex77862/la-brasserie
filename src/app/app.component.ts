@@ -1,29 +1,11 @@
-import { Component, OnInit } from '@angular/core';
-import { HttpService } from './http.service';
-import * as AOS from 'aos';
-
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-root',
-  templateUrl: './app.component.html',
+  template: '<router-outlet></router-outlet>', // Utilisation de <router-outlet> pour afficher les composants des pages
   styleUrls: ['./app.component.css']
 })
 
-export class AppComponent implements OnInit {
+export class AppComponent {
   title = 'la-brasserie';
-  allBeers: any[] = []; // Propriété pour stocker toutes les bières
-
-  constructor(private httpService: HttpService) { }
-
-  ngOnInit() {
-    AOS.init();
-    this.httpService.fetchDataFromUrl().then(response => {
-      console.log(response.data);
-      // Affectez toutes les bières à la propriété allBeers
-      this.allBeers = response.data;
-    }).catch(error => {
-      console.error(error);
-    });
-  }
 }
-

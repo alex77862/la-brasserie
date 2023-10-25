@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-beer-detail',
@@ -9,16 +9,18 @@ import { ActivatedRoute } from '@angular/router';
 export class BeerDetailComponent implements OnInit {
   beerId: number | undefined;
 
-  constructor(private route: ActivatedRoute) { }
+  constructor(private route: ActivatedRoute, private router: Router) { }
 
   ngOnInit() {
     this.route.params.subscribe(params => {
       this.beerId = +params['id'];
-      if (this.beerId) {
-        console.log('Beer ID:', this.beerId);
-        // Maintenant, vous pouvez utiliser this.beerId en toute sécurité
-      } else {
+      if (isNaN(this.beerId)) {
         console.error('Invalid Beer ID');
+        // Redirige vers /home si beerId est NaN
+        this.router.navigate(['/home']);
+      } else {
+        console.log('Beer ID:', this.beerId);
+        // Vous pouvez utiliser this.beerId en toute sécurité ici
       }
     });
   }

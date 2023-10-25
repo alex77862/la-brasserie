@@ -9,12 +9,14 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BeerDetailComponent } from './beer-detail/beer-detail.component';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
-    BeerDetailComponent
+    BeerDetailComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
