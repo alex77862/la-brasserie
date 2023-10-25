@@ -1,16 +1,23 @@
 <div class="content" role="main">
   <app-navbar></app-navbar>
   <img src="../assets/img/wall.jpg" style="width: 100%; height: 100vh; object-fit: cover;" alt="" />
+  <router-outlet></router-outlet>
   <div class="container" style="padding-top: 50px;">
-    <h2 class="kaushan">Toutes nos bieres</h2>
+    <h2 class="kaushan">Discover our beers</h2>
     <div style="display: flex; flex-wrap: wrap; justify-content: space-between;">
-      <div *ngFor="let beer of allBeers" style="min-width: 250px; max-width: 250px; margin: 15px; margin-bottom: 50px;">
-        <div class="imgSection" style="background: white; border: 1px solid #d2d1d1; border-radius: 15px; display: flex; justify-content: center; align-items: center; padding: 15px;">
-          <img [src]="beer.image_url" alt="Image de la bière" height="250">
-        </div>
-        <p class="kaushan" style="margin: 5px; font-size: 20px;">{{ beer.name }}</p>
-        <p style="line-height: 1.2; margin-left: 5px;">{{ beer.tagline }}</p>
-        <button style="margin: auto; display: flex; width: fit-content; background-color: #393838; color: white; border: 0; border-radius: 10px; padding: 5px 25px;" class="kaushan">En Savoir Plus</button>
+      <div *ngFor="let beer of allBeers" data-aos="fade-up"
+        style="min-width: 250px; max-width: 250px; margin: 15px; margin-bottom: 50px;">
+        <a [routerLink]="['/beer', beer.id]"> <!-- Redirige vers la page de détail de la bière -->
+          <div class="imgSection"
+            style="background: white; border: 1px solid #d2d1d1; border-radius: 15px; display: flex; justify-content: center; align-items: center; padding: 15px;">
+            <img [src]="beer.image_url" alt="Image de la bière" height="250">
+          </div>
+          <p class="kaushan" style="margin: 5px; font-size: 20px;">{{ beer.name }}</p>
+          <p style="line-height: 1.2; margin-left: 5px;">{{ beer.tagline }}</p>
+          <button
+            style="margin: auto; display: flex; width: fit-content; background-color: #393838; color: white; border: 0; border-radius: 10px; padding: 5px 25px;"
+            class="btnExemple">Learn More</button>
+        </a>
       </div>
     </div>
   </div>
