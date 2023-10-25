@@ -2,6 +2,7 @@
 
 import { Component, ElementRef, HostListener, Renderer2, ViewChild } from '@angular/core';
 import { SearchService } from '../search.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-search-bar',
@@ -15,21 +16,32 @@ export class SearchBarComponent {
 
   @ViewChild('dropdown') dropdown!: ElementRef;
 
-  constructor(private searchService: SearchService, private renderer: Renderer2) {}
+  constructor(private searchService: SearchService, private renderer: Renderer2, private router: Router) {}
 
   onSearch() {
     this.searchService.getAllBeers()
       .then(data => {
-        // Filtrer les bières en fonction du terme de recherche
         this.results = data.filter((beer: any) => beer.name.toLowerCase().includes(this.searchTerm.toLowerCase()));
-        this.showDropdown = this.results.length > 0; // Affiche le dropdown si des résultats sont trouvés
+        this.showDropdown = this.results.length > 0;
       });
   }
 
   @HostListener('document:click', ['$event'])
   clickOutside(event: any) {
     if (this.dropdown && !this.dropdown.nativeElement.contains(event.target)) {
-      this.showDropdown = false; // Masque le dropdown si vous cliquez à l'extérieur
+      this.showDropdown = false;
     }
+  }
+
+  hoverItem(index: number) {
+    this.results[index].hovered = true;
+  }
+
+  unhoverItem(index: number) {
+    this.results[index].hovered = false;
+  }
+
+  onItemClick(beer: any) {
+    this.router.navigate(['/beer', beer.id]);
   }
 }

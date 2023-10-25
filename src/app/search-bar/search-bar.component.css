@@ -13,10 +13,13 @@ button {
   border-radius: 5px;
 }
 
+/* search-bar.component.css */
+
+/* search-bar.component.css */
+
 .search-bar {
   position: relative;
 }
-
 
 .dropdown {
   position: absolute;
@@ -24,4 +27,23 @@ button {
   background: #fff;
   border: 1px solid #ccc;
   z-index: 1;
+  max-height: 50vh;
+  max-width: 70vw;
+  overflow-y: auto;
 }
+
+/* Style par défaut */
+.dropdown-item {
+  display: flex;
+  align-items: center;
+  padding: 5px 0;
+  border-bottom: 1px solid #d2d1d1;
+}
+
+/* Style au survol */
+.dropdown-item:hover {
+  background-color: #d2d1d1;
+  cursor: pointer;
+}
+
+
