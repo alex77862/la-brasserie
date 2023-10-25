@@ -12,6 +12,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BeerDetailComponent } from './beer-detail/beer-detail.component';
 import { HomeComponent } from './home/home.component';
 import { FormsModule } from '@angular/forms';
+import { SearchBarComponent } from './search-bar/search-bar.component';
 
 
 @NgModule({
@@ -19,7 +20,8 @@ import { FormsModule } from '@angular/forms';
     AppComponent,
     NavbarComponent,
     BeerDetailComponent,
-    HomeComponent
+    HomeComponent,
+    SearchBarComponent
   ],
   imports: [
     BrowserModule,
