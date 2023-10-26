@@ -1,8 +1,8 @@
 input[type="text"] {
   width: 200px;
   padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
+  border-radius: 15px 0 0 15px
+
 }
 
 button {
@@ -10,12 +10,17 @@ button {
   color: #fff;
   padding: 10px 20px;
   border: none;
-  border-radius: 5px;
+  width: 20px; border-radius: 0 15px 15px 0;
 }
 
 .search-bar {
   position: relative;
 }
+
+.imgContainer {
+  width: 50px;
+}
+
 
 .dropdown {
   position: absolute;
@@ -32,6 +37,8 @@ button {
   display: flex;
   align-items: center;
   padding: 5px 0;
+  min-width: 180px;
+  max-width: 200px;
   border-bottom: 1px solid #d2d1d1;
 }
 

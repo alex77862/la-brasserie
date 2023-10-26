@@ -1,15 +1,15 @@
-<div class="search-bar" (click)="showDropdown = true" style="display: flex;">
-  <input type="text" [(ngModel)]="searchTerm" placeholder="Search something..." style="border-radius: 15px 0 0 15px; border: 1px solid #d2d1d1; border-right: 0;">
-  <button (click)="onSearch()" style="width: 20px; border-radius: 0 15px 15px 0; border: 1px solid #d2d1d1; border-left: 0; display: flex; justify-content: center; align-items: center;"><img src="../../assets/img/loupe.png" alt="searchIcon" width="15" ></button>
+<div class="search-bar d-flex" (click)="showDropdown = true">
+  <input type="text" [(ngModel)]="searchTerm" placeholder="Search something..." class="gray-border border-right-0">
+  <button (click)="onSearch()" class="border-left-0 gray-border d-flex justify-center align-items-center"><img src="../../assets/img/loupe.png" alt="searchIcon" width="15" ></button>
 </div>
 
 <div class="dropdown" *ngIf="showDropdown" #dropdown>
   <div *ngFor="let beer of results; let i = index" (click)="onItemClick(beer)">
-    <div [class]="beer.hovered ? 'dropdown-item' : 'dropdown-item'" style="display: flex; align-items: center;">
-      <div class="imgContainer" style="width: 50px; display: flex; justify-content: center; align-items: center;">
+    <div [class]="beer.hovered ? 'dropdown-item' : 'dropdown-item'" class="d-flex align-items-center">
+      <div class="imgContainer d-flex justify-center align-items-center">
         <img [src]="beer.image_url" alt="Image de la bière" height="75px">
       </div>
-      {{ beer.name }}
+      <p class="text-wrap">{{ beer.name }}</p>
     </div>
   </div>
 </div>

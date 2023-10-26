@@ -1,18 +1,40 @@
 p {
-    margin: 0;
+  margin: 0;
 }
 
-.infos > div > p {
-    height: 50px;
-    padding: 5px;
-    display: flex;
-    align-items: center;
+.infos>div>p {
+  height: 50px;
+  padding: 5px;
+  display: flex;
+  align-items: center;
 }
 
-.infos > div > p:nth-child(odd) {
-    background-color: #E8E8E8; /* Couleur pour les éléments impairs */
+.infos>div>p:nth-child(odd) {
+  background-color: #E8E8E8;
 }
 
-.infos > div > p:nth-child(even) {
-    background-color: #F9F9F9; /* Couleur pour les éléments pairs */
+.infos>div>p:nth-child(even) {
+  background-color: #F9F9F9;
+}
+
+.font-size-tagline {
+    font-size: 1.3em;
+}
+
+.imgContainer {
+    min-width: 300px; max-width: 300px;
+}
+
+.beer-detail {
+    margin-top: 20vh; margin-bottom: 5vh;
+}
+
+@media (max-width: 500px) {
+  .beer-detail {
+    margin-top: 30vh;
+  }
+
+  .imgContainer {
+    max-height: 350px;
+  }
 }

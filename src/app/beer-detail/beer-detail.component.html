@@ -1,21 +1,19 @@
 <app-navbar></app-navbar>
-<!-- <div class="beer-detail container" data-aos="flip-left" style="margin-top: 20vh;"> -->
-<div class="beer-detail container" style="margin-top: 20vh; margin-bottom: 5vh;">
-  <div style="display: flex;">
-    <div class="imgContainer"
-      style="border: 3px solid #d2d1d1;background-color: white; border-radius: 10px; padding: 25px; min-width: 300px; max-width: 300px; display: flex; justify-content: center; align-items: center;">
-      <img [src]="beer.image_url" alt="Image de la bière" height="300">
+<div class="beer-detail container">
+  <div class="d-flex">
+    <div class="imgContainer white-bg d-flex justify-center gray-border radius10 padding15 align-items-center">
+      <img [src]="beer.image_url" alt="Image de la bière" height="300" class="beerDetailImg">
     </div>
-    <div class="infos" style="margin-left: 15px; display: flex; flex-wrap: wrap; flex-direction: column;">
+    <div class="infos d-flex flex-wrap flex-direction-column margin-left-15">
       <h1 class="kaushan">{{ beer.name }}</h1>
-      <p class="kaushan" style="font-size: 1.3em;">{{ beer.tagline }}</p>
+      <p class="kaushan font-size-tagline">{{ beer.tagline }}</p>
       <p>ALC. {{ beer.abv }}% VOL.</p>
       <br><br>
-      <p style="background-color: white; border: 1px solid #d2d1d1; border-radius: 10px; padding: 15px;">
+      <p class="white-bg gray-border radius10 padding15">
         {{ beer.description }}</p>
     </div>
   </div>
-  <div class="infos" style="margin-top: 25px;">
+  <div class="infos margin-top-25">
     <h3 class="kaushan">Beer characteristics:</h3>
     <div>
       <p>First brewed: {{ beer.first_brewed }}</p>
@@ -23,8 +21,8 @@
       <p>IBU (International Bitterness Units): {{ beer.ibu }}</p>
     </div>
   </div>
-  <h3 class="kaushan" style="margin-top: 50px; ">Ingredients:</h3>
-  <div class="ingredients" style="display: flex; justify-content: space-between;">
+  <h3 class="kaushan margin-top-50">Ingredients:</h3>
+  <div class="ingredients d-flex justify-between">
     <div>
       <h4 class="kaushan">Malts:</h4>
       <ul>
@@ -48,8 +46,8 @@
     </div>
   </div>
 
-  <h3 class="kaushan" style="margin-top: 25px;">Brewing Method:</h3>
-  <div class="method" style="display: flex; justify-content: space-between;">
+  <h3 class="kaushan margin-top-25">Brewing Method:</h3>
+  <div class="method d-flex justify-between">
     <div>
       <h4 class="kaushan">Mash Temp:</h4>
       <ul>
@@ -68,10 +66,10 @@
     </div>
   </div>
 
-  <h3 class="kaushan" style="margin-top: 25px;">Brewed tips:</h3>
+  <h3 class="kaushan margin-top-25">Brewed tips:</h3>
   <p>{{ beer.brewers_tips }}</p>
 
-  <h3 class="kaushan" style="margin-top: 25px;">Food Pairing:</h3>
+  <h3 class="kaushan margin-top-25">Food Pairing:</h3>
 <ul>
   <li *ngFor="let foodItem of beer.food_pairing">
     {{ foodItem }}

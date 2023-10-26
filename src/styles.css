@@ -8,18 +8,6 @@ body, * {
   color: black;
 }
 
-.logo {
-    font-size: 3em;
-    font-weight: bold;
-    margin: 0;
-}
-
-@media (max-width: 350px) {
-  .logo {
-    font-size: 2.8em;
-  }
-}
-
 ::-webkit-scrollbar {
   width: 10px;
 }
@@ -39,5 +27,102 @@ body, * {
 .white-bg {
   background: white;
 }
+
+.dark-bg {
+  background-color: #393838;
+}
+
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.d-flex {
+  display: flex;
+}
+
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
+.flex-direction-column {
+  flex-direction: column;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+.align-items-center {
+  align-items: center;
+}
+
+.margin-5 {
+  margin: 5px;
+}
+
+.margin-15 {
+  margin: 15px;
+}
+
+.margin-top-25 {
+  margin-top: 25px;
+}
+
+.margin-top-50 {
+  margin-top: 50px;
+}
+
+.margin-left-5 {
+  margin-left: 5px;
+}
+
+.margin-left-15 {
+  margin-left: 15px;
+}
+
+.gray-border {
+  border: 1px solid #d2d1d1;
+}
+
+.border-0 {
+  border: 0;
+}
+
+.border-right-0 {
+  border-right: 0;
+}
+
+.border-left-0 {
+  border-left: 0;
+}
+
+.radius10 {
+  border-radius: 10px;
+}
+
+.padding15 {
+  padding: 15px;
+}
+
+.width100 {
+  width: 100%;
+}
+
+.height100 {
+  height: 100%;
+}
+
+.text-wrap {
+  text-wrap: wrap;
+}
+
+.margin-auto {
+  margin: auto;
+}
+
+.padding-top-50{
+  padding-top: 50px;
+}
