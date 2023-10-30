@@ -1,6 +1,8 @@
 // http.service.ts
 
-import { Injectable } from '@angular/core';
+import {
+  Injectable
+} from '@angular/core';
 import axios from 'axios';
 
 @Injectable({
@@ -9,15 +11,14 @@ import axios from 'axios';
 export class HttpService {
   private apiUrl = 'https://api.punkapi.com/v2/beers';
 
-  constructor() { }
+  constructor() {}
 
   fetchDataFromUrl() {
     return axios.get(this.apiUrl);
   }
 
   getBeerById(beerId: number) {
-  const apiUrl = `${this.apiUrl}/${beerId}`;
-  return axios.get(apiUrl);
-}
-
+    const apiUrl = `${this.apiUrl}/${beerId}`;
+    return axios.get(apiUrl);
+  }
 }

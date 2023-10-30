@@ -1,5 +1,3 @@
-// search-bar.component.ts
-
 import { Component, ElementRef, HostListener, Renderer2, ViewChild } from '@angular/core';
 import { SearchService } from '../search.service';
 import { Router } from '@angular/router';
@@ -42,6 +40,8 @@ export class SearchBarComponent {
   }
 
   onItemClick(beer: any) {
-    this.router.navigate(['/beer', beer.id]);
+    if (beer.name !== 'No result...') {
+      this.router.navigate(['/beer', beer.id]);
+    }
   }
 }
